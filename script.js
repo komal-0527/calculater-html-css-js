@@ -3,28 +3,27 @@ let buttons = document.querySelectorAll('button');
 
 let string = '';
 let arr = Array.from(buttons);
+
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
-        let btnValue = e.target.innerHTML;
+        const value = e.target.innerHTML;
 
-        if (btnValue === '=') {
+        if (value === '=') {
             try {
                 string = eval(string);
+                input.value = string;
             } catch {
-                string = "Error";
+                input.value = "Error";
+                string = '';
             }
-            input.value = string;
-        }
-        else if (btnValue === 'AC') {
+        } else if (value === 'AC') {
             string = '';
             input.value = string;
-        }
-        else if (btnValue === 'DEL') {
+        } else if (value === 'DEL') {
             string = string.slice(0, -1);
             input.value = string;
-        }
-        else {
-            string += btnValue;
+        } else {
+            string += value;
             input.value = string;
         }
     });
