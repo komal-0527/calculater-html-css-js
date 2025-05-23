@@ -35,7 +35,7 @@ input {
     padding: 24px;
     margin: 10px;
     background: transparent;
-    box-sizing: 0px 3px 15px rgba(84, 84, 84, 0.1);
+      box-shadow: -1px -1px 8px rgba(5, 248, 224, 0.1);
     font-size: 40px;
     color: #05c887;
     text-align: right;
