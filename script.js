@@ -6,9 +6,9 @@ let arr = Array.from(buttons);
 
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
-        const value = e.target.innerHTML;
+        const BtnValue = e.target.innerHTML;
 
-        if (value === '=') {
+        if (BtnValue === '=') {
             try {
                 string = eval(string);
                 input.value = string;
@@ -16,15 +16,16 @@ arr.forEach(button => {
                 input.value = "Error";
                 string = '';
             }
-        } else if (value === 'AC') {
+        } else if (BtnValue === 'AC') {
             string = '';
             input.value = string;
-        } else if (value === 'DEL') {
+        } else if (BtnValue === 'DEL') {
             string = string.slice(0, -1);
             input.value = string;
         } else {
-            string += value;
+            string += BtnValue;
             input.value = string;
         }
     });
 });
+
